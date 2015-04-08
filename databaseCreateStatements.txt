@@ -1,0 +1,33 @@
+
+CREATE TABLE userData
+(
+id INT NOT NULL AUTO_INCREMENT,
+username VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE userKeys
+(
+userId INT NOT NULL,
+providerId INT NOT NULL,
+userKey VARCHAR(255),
+PRIMARY KEY(userId, providerId),
+FOREIGN KEY(userId) REFERENCES userData(id)
+);
+
+CREATE TABLE usedTokens
+(
+token VARCHAR(255) NOT NULL,
+expiration DATETIME,
+lastArticleId INT,
+PRIMARY KEY(token)
+);
+
+CREATE TABLE content
+(
+articleId INT NOT NULL AUTO_INCREMENT,
+articlePath VARCHAR(255)
+PRIMARY KEY(articleId)
+);
+
