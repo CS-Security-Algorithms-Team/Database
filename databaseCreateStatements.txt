@@ -27,7 +27,7 @@ PRIMARY KEY(token)
 CREATE TABLE content
 (
 articleId INT NOT NULL AUTO_INCREMENT,
-articlePath VARCHAR(255)
+articlePath VARCHAR(255),
 PRIMARY KEY(articleId)
 );
 
